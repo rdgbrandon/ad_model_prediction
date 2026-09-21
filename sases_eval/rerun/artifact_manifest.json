@@ -1,0 +1,22 @@
+{
+  "report_versions": {
+    "numpy": "1.24.4",
+    "scipy": "1.10.1",
+    "scikit-learn": "1.3.2",
+    "h5py": "3.11.0",
+    "matplotlib": "3.7.5",
+    "reportlab": "3.6.13"
+  },
+  "sha256": {
+    "report_theory_audit.py": "6e4ca98ea80c6cdc0e10deca2dcef25cd13fb4f201b9fb036c13e6f23f01fcee",
+    "test_theory_audit.py": "5b640d19d1140a88674094a4f3dbc97b78da551c0311b49f774894ead41fa38a",
+    "requirements-rerun.txt": "c692b1b7e76d21b3ff63615db3eac0303dc8cf84a13dc234ef725669a5b77b97",
+    "README_RERUN.md": "173fdb27e48404fa3acf12f11fb58882f3b905580a871010c1a768a7f8bece11",
+    "PAPER_REVISIONS.md": "4f7a9be6e408e70f3f4e5eb06156b393e53d9a8479c863e1b60a05d08091dd7d",
+    "rerun\\sases_theory_rerun.pdf": "3ade8c6f554a5ecbb400b9f274adf708a14cf3ba461eb7ace9479435a07a3081",
+    "rerun\\results.md": "f8e90ea8ce8a53c9adff3a9fda283cd2eda7dffc9dba50b262b1c441dc59b58e",
+    "rerun\\audit_rows.csv": "0e90d4cac3046885e7e1bd7d93840f24d490d795d90fe9ac266381e494a0d274",
+    "rerun\\calibration_fits.json": "37e4bd3f2aa0f035826bdc6ebdb3a4ea140202c56ff6d5f83c0abd3645360d55",
+    "rerun\\results.json": "937a1c9adadc9dd5354ddd3460b1d1774ec774c2bffca7e4f81fb0c24b3af89c"
+  }
+}

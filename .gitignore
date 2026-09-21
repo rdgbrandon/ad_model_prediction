@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.venv/
+dataset/b200_50MB.h5
+web/data/*.tmp
+sases_eval/*/results.tmp
