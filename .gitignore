@@ -4,3 +4,4 @@ __pycache__/
 dataset/b200_50MB.h5
 web/data/*.tmp
 sases_eval/*/results.tmp
+figures_summary/

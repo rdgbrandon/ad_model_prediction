@@ -52,6 +52,15 @@ must lie in *all* the selected balls at once (5 on the canonical split, up to
 42 on the widest sweep). It did on every audited row, but the thinnest margin
 falls to 0.20 distance units.
 
+## Plain-language summary
+
+[`How_Wrong_Is_The_Guess.pdf`](How_Wrong_Is_The_Guess.pdf) explains all of this
+without jargon, for readers with no background in the area: what was measured,
+how the bound works, what the numbers say, and how the approach compares with
+conformal prediction, ensembles, physics-residual methods and certified PINN
+error bounds. Rebuild it with `python make_summary_pdf.py`, which reads the
+committed results so its figures and numbers cannot drift from the audits.
+
 ## Read this before drawing conclusions
 
 The corpus is **20 experiments from one apparatus**, already inspected before
