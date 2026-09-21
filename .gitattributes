@@ -1,0 +1,6 @@
+# Keep binary artifacts byte-exact. Without this, a clone with
+# core.autocrlf=true rewrites line endings inside them and corrupts the file.
+*.pdf   binary
+*.png   binary
+*.npz   binary
+*.h5    binary
