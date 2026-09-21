@@ -85,3 +85,48 @@ holds only at small delta is a much weaker claim.
 
 Do not drop a dataset, level or model after seeing its result. Do not add a
 dataset chosen because it worked.
+
+## Amendment: rule B, added after rule A failed its positive control
+
+Rule A above is kept and reported exactly as run. It failed on
+`synth_loglinear`, the family where the drift law holds *exactly* -- coverage
+0.000. The cause is visible without any test label:
+
+    truth - centre = (q_true - q_cal) * delta - noise_ceiling + noise_test
+    radius         = ||q_cal - q_ref|| * delta
+
+`q_ref` and `q_cal` are two noisy estimates of the same slope, so the
+allowance is the same size as the error it must cover -- a coin flip -- and
+there is no term at all for the measurement noise in the ceiling itself, which
+does not vanish as delta goes to zero. Rule A is therefore mis-specified, not
+merely loose. That is the same defect RERUN_PROTOCOL.md item 4 records for the
+capillary law, whose repair -- a nonzero boundary term -- rule A dropped.
+
+Rule B restores it, using calibration data only:
+
+    b_cal  = max law-fit residual over the calibration levels
+    radius = ||q_cal - q_ref|| * delta + b_cal
+
+Both rules are scored on every dataset and both are reported. Rule B is
+motivated by the positive control and by calibration-region scatter, never by
+coverage on a measured dataset. No further rule will be added, and the
+falsification condition is unchanged: on `synth_break`, coverage must fall
+relative to `synth_loglinear`. A rule that covers both equally is useless.
+
+## Rule C: the incumbent, scored unchanged for comparison
+
+Rule C is not a new candidate. It is the published capillary rule
+(CEILING_PROTOCOL.md) applied unmodified to every dataset here:
+
+    radius = ||q_cal - 0.5 * ones|| * delta
+
+It is scored because the point of this audit is to test the existing method on
+new data, and because rules A and B both make the allowance depend on how much
+the slope *changes*, which the controls show is the wrong quantity. Rule C
+instead makes it depend on how far the fitted slope sits from a fixed
+reference. Whether that discriminates a sound law from a broken one is exactly
+what the controlled families can settle, and it could not be settled on the
+capillary corpus, where coverage was 78/78.
+
+All three rules are reported for all datasets, including where the incumbent
+loses.

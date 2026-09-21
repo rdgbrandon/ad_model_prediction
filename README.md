@@ -30,6 +30,7 @@ read afterwards only to audit whether the premise held.
 | `ceiling/` | Does scoring against the labelled calibration ceiling beat the anchor heuristic? | Yes: mean `S/e` 0.298 → 0.809 at 192 mW, MLP(8) |
 | `mechanism/` | Is the growth assumption doing real work, or is it triangle-inequality slack? | Growth fits inside the allowance on all 29 checks; endpoint audits cannot exclude interior failure |
 | `consensus/` | Does combining rules from calibration subsets tighten the bound? | A modest, model-dependent gain — with three caveats below |
+| `external/` | Does any of it work on other datasets, and at more test levels? | **Partly. Coverage is 0.77-0.86 over 23 test levels, not the 1.00 that 3-4 levels suggested** |
 
 **The newest result.** Fitting a separate rule on every subset of at least
 three calibration trials and reporting the strongest bound raised the fraction
@@ -51,6 +52,30 @@ The bound also requires a **stronger premise** than before: the true spectrum
 must lie in *all* the selected balls at once (5 on the canonical split, up to
 42 on the widest sweep). It did on every audited row, but the thinnest margin
 falls to 0.20 distance units.
+
+## The generalization result
+
+[`sases_eval/external/FINDINGS.md`](sases_eval/external/FINDINGS.md) is the
+most important result here and the least flattering. Run on four sets of real
+measurements (capillary temporal and spatial spectra, Delft yacht resistance,
+NASA airfoil self-noise) plus families where the right answer is known:
+
+- The original capillary split still covers **42/42**. Nothing earlier was
+  wrong. But swept over every admissible calibration ceiling on the *same*
+  recordings, the incumbent covers **0.714**. The 100% belonged to two
+  hand-chosen ceilings.
+- Failures cluster at **short** extrapolation from a **low** ceiling, not at
+  long range. The radius vanishes as the extrapolation distance goes to zero;
+  the law error at the ceiling does not. Restoring the boundary term from
+  `RERUN_PROTOCOL.md` lifts the capillary corpus back to 1.000.
+- A pre-registered falsification test was **failed** by both generic rules:
+  they cover a deliberately broken law *more* often than an exact one, because
+  their allowance is proportional to the drift it is meant to police. Only the
+  incumbent fixed reference moves the right way, and even it misses smooth
+  curvature.
+- The KZ exponent is not doing the work: moving the reference from 0 to 1
+  changes the radius by about 20%, while the fitted slope supplies the rest.
+
 
 ## Plain-language summary
 
