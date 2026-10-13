@@ -1,0 +1,136 @@
+INDEPENDENT REPLICATION: KELMARSH WIND TURBINES (2016)
+Kelmarsh wind farm dataset, Cubico Sustainable Investments Ltd, Zenodo 16807551, CC-BY-4.0
+units examined 48; entering scenario A: 48, scenario B: 25
+rows: 2547   surrogates per unit: 9   law exponents q_th = [3.0, 1.0]
+
+
+====================================================================================================
+SCENARIO A: 8.5-10.5 m/s, below rated, the law roughly holds
+====================================================================================================
+fitted law exponents on LAWCAL (median over units): q_P 3.06, q_omega 0.85 (theory 3, 1)
+
+-- premise against bound, row level (the H2 cross-tab) --
+                       bound held   bound failed
+  premise held               0              0
+  premise failed           308           1420
+  premise coverage 0.000, validity 0.178, validity where premise held --
+  median S/e 1.073   silent (S <= 0.01) 0.005   median e 0.854
+  (outputs are natural logs, so S = 0.01 is a 1% bound on power or speed)
+
+-- every method, both readings --
+method               slide    below e  above e   score/e    rank rho
+--------------------------------------------------------------------
+SASES consensus      lower      0.178    0.822      1.07       0.985
+Calibration maximum  lower      0.995    0.005      0.65       0.955
+Raw defect           upper      0.165    0.835      1.07       0.986
+OLS error predictor  upper      0.472    0.528      1.01       0.954
+
+-- held on every row of a cluster, with 95% Clopper-Pearson --
+method               side       unit (turbine-month)                 turbine                   month
+----------------------------------------------------------------------------------------------------
+SASES consensus      lower       0/48 [0.000, 0.074]      0/6 [0.000, 0.459]      0/8 [0.000, 0.369]
+Calibration maximum  lower      41/48 [0.722, 0.939]      1/6 [0.004, 0.641]      4/8 [0.157, 0.843]
+Raw defect           upper       0/48 [0.000, 0.074]      0/6 [0.000, 0.459]      0/8 [0.000, 0.369]
+OLS error predictor  upper       0/48 [0.000, 0.074]      0/6 [0.000, 0.459]      0/8 [0.000, 0.369]
+
+-- below-error rate per cluster (lower-bound reading for every method) --
+  by turbine:
+    SASES consensus       0.15  0.22  0.16  0.16  0.19  0.19
+    Calibration maximum   1.00  1.00  0.99  1.00  0.99  1.00
+    Raw defect            0.14  0.19  0.16  0.16  0.17  0.16
+    OLS error predictor   0.48  0.52  0.47  0.48  0.42  0.46
+  by month:
+    SASES consensus       0.19  0.17  0.20  0.15  0.18  0.23  0.18  0.13
+    Calibration maximum   1.00  1.00  1.00  1.00  1.00  0.99  1.00  0.98
+    Raw defect            0.19  0.11  0.19  0.15  0.18  0.19  0.18  0.13
+    OLS error predictor   0.54  0.48  0.48  0.47  0.47  0.44  0.44  0.46
+
+-- paired sign tests, SASES against each competitor --
+Two indicators: "held on every row of the cluster" (this project's convention,
+each method on its slide side) and "higher below-error rate in the cluster".
+competitor           indicator             level                SASES/comp.   p one-sided
+-----------------------------------------------------------------------------------------
+Calibration maximum  held on every row     unit (turbine-month)          0/41             1
+Calibration maximum  held on every row     turbine                      0/1             1
+Calibration maximum  held on every row     month                        0/4             1
+                     higher below rate     unit (turbine-month)          0/48             1
+                     higher below rate     turbine                      0/6             1
+                     higher below rate     month                        0/8             1
+Raw defect           held on every row     unit (turbine-month)           0/0            --
+Raw defect           held on every row     turbine                      0/0            --
+Raw defect           held on every row     month                        0/0            --
+                     higher below rate     unit (turbine-month)           8/1          0.02
+                     higher below rate     turbine                      5/0         0.031
+                     higher below rate     month                        5/1          0.11
+OLS error predictor  held on every row     unit (turbine-month)           0/0            --
+OLS error predictor  held on every row     turbine                      0/0            --
+OLS error predictor  held on every row     month                        0/0            --
+                     higher below rate     unit (turbine-month)          0/48             1
+                     higher below rate     turbine                      0/6             1
+                     higher below rate     month                        0/8             1
+
+
+====================================================================================================
+SCENARIO B: 11.5-14.5 m/s, rated region, the law fails
+====================================================================================================
+fitted law exponents on LAWCAL (median over units): q_P 3.05, q_omega 0.86 (theory 3, 1)
+
+-- premise against bound, row level (the H2 cross-tab) --
+                       bound held   bound failed
+  premise held               0              0
+  premise failed           140            679
+  premise coverage 0.000, validity 0.171, validity where premise held --
+  median S/e 1.609   silent (S <= 0.01) 0.006   median e 1.211
+  (outputs are natural logs, so S = 0.01 is a 1% bound on power or speed)
+
+-- every method, both readings --
+method               slide    below e  above e   score/e    rank rho
+--------------------------------------------------------------------
+SASES consensus      lower      0.171    0.829      1.61       0.826
+Calibration maximum  lower      0.941    0.059      0.57       0.689
+Raw defect           upper      0.171    0.829      1.62       0.827
+OLS error predictor  upper      0.222    0.778      1.57       0.691
+
+-- held on every row of a cluster, with 95% Clopper-Pearson --
+method               side       unit (turbine-month)                 turbine                   month
+----------------------------------------------------------------------------------------------------
+SASES consensus      lower       0/25 [0.000, 0.137]      0/6 [0.000, 0.459]      0/5 [0.000, 0.522]
+Calibration maximum  lower       8/25 [0.149, 0.535]      0/6 [0.000, 0.459]      0/5 [0.000, 0.522]
+Raw defect           upper       0/25 [0.000, 0.137]      0/6 [0.000, 0.459]      0/5 [0.000, 0.522]
+OLS error predictor  upper       0/25 [0.000, 0.137]      0/6 [0.000, 0.459]      0/5 [0.000, 0.522]
+
+-- below-error rate per cluster (lower-bound reading for every method) --
+  by turbine:
+    SASES consensus       0.11  0.19  0.20  0.17  0.18  0.19
+    Calibration maximum   0.99  0.91  0.94  0.93  0.92  0.97
+    Raw defect            0.11  0.19  0.20  0.17  0.18  0.19
+    OLS error predictor   0.22  0.22  0.22  0.22  0.22  0.22
+  by month:
+    SASES consensus       0.19  0.17  0.17  0.22  0.16
+    Calibration maximum   0.90  0.92  0.96  0.84  0.99
+    Raw defect            0.19  0.17  0.17  0.22  0.16
+    OLS error predictor   0.22  0.22  0.22  0.22  0.22
+
+-- paired sign tests, SASES against each competitor --
+Two indicators: "held on every row of the cluster" (this project's convention,
+each method on its slide side) and "higher below-error rate in the cluster".
+competitor           indicator             level                SASES/comp.   p one-sided
+-----------------------------------------------------------------------------------------
+Calibration maximum  held on every row     unit (turbine-month)           0/8             1
+Calibration maximum  held on every row     turbine                      0/0            --
+Calibration maximum  held on every row     month                        0/0            --
+                     higher below rate     unit (turbine-month)          0/25             1
+                     higher below rate     turbine                      0/6             1
+                     higher below rate     month                        0/5             1
+Raw defect           held on every row     unit (turbine-month)           0/0            --
+Raw defect           held on every row     turbine                      0/0            --
+Raw defect           held on every row     month                        0/0            --
+                     higher below rate     unit (turbine-month)           0/0            --
+                     higher below rate     turbine                      0/0            --
+                     higher below rate     month                        0/0            --
+OLS error predictor  held on every row     unit (turbine-month)           0/0            --
+OLS error predictor  held on every row     turbine                      0/0            --
+OLS error predictor  held on every row     month                        0/0            --
+                     higher below rate     unit (turbine-month)          0/10             1
+                     higher below rate     turbine                      0/6             1
+                     higher below rate     month                        0/4             1

@@ -4,3 +4,5 @@
 *.png   binary
 *.npz   binary
 *.h5    binary
+*.pt    binary
+*.pkl   binary

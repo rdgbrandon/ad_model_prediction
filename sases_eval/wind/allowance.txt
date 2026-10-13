@@ -1,0 +1,49 @@
+
+========================================================================================================
+2016 - DEVELOPMENT (exploratory: residuals already seen)
+========================================================================================================
+
+scenario A: 8.5-10.5 m/s, below rated
+rule                                        premise           95% CI    valid    units fail|prem  S/e med  silent    inf
+------------------------------------------------------------------------------------------------------------------------
+C  ceiling theory-distance (primary run)      0.000   [0.000, 0.019]    0.215     0/48         0    1.048   0.010  0.000
+P  paper Eq.5, 2 x short-hop kappa'           0.453   [0.381, 0.526]    0.631    11/48         0    0.983   0.063  0.000
+E1 long-hop kappa' (calibration labels)       0.620   [0.547, 0.689]    0.770    12/48         0    0.964   0.073  0.000
+E2 E1 + extrapolated curvature                0.620   [0.547, 0.689]    0.770    12/48         0    0.962   0.073  0.000
+E3 fleet-calibrated, conformal 90%            0.917   [0.868, 0.952]    0.970    42/48         0    0.944   0.078  0.000
+
+scenario B: 11.5-14.5 m/s, rated
+rule                                        premise           95% CI    valid    units fail|prem  S/e med  silent    inf
+------------------------------------------------------------------------------------------------------------------------
+C  ceiling theory-distance (primary run)      0.000   [0.000, 0.040]    0.171     0/25         0    1.563   0.021  0.000
+P  paper Eq.5, 2 x short-hop kappa'           0.011   [0.000, 0.060]    0.179     0/25         0    1.363   0.087  0.000
+E1 long-hop kappa' (calibration labels)       0.000   [0.000, 0.040]    0.179     0/25         0    1.317   0.109  0.000
+E2 E1 + extrapolated curvature                0.000   [0.000, 0.040]    0.179     0/25         0    1.315   0.111  0.000
+E3 fleet-calibrated, conformal 90%            0.934   [0.862, 0.975]    0.968    22/25         0    0.000   0.502  0.418
+
+========================================================================================================
+2017 - CONFIRMATION (untouched year)
+========================================================================================================
+
+scenario A: 8.5-10.5 m/s, below rated
+rule                                        premise           95% CI    valid    units fail|prem  S/e med  silent    inf
+------------------------------------------------------------------------------------------------------------------------
+C  ceiling theory-distance (primary run)      0.000   [0.000, 0.013]    0.206     0/72         0    1.043   0.002  0.000
+P  paper Eq.5, 2 x short-hop kappa'           0.517   [0.458, 0.576]    0.676    23/72         0    0.975   0.053  0.000
+E1 long-hop kappa' (calibration labels)       0.681   [0.623, 0.734]    0.835    32/72         0    0.954   0.068  0.000
+E2 E1 + extrapolated curvature                0.684   [0.627, 0.737]    0.836    33/72         0    0.954   0.068  0.000
+E3 fleet-calibrated, conformal 90%            0.962   [0.933, 0.981]    0.992    67/72         0    0.935   0.071  0.000
+
+scenario B: 11.5-14.5 m/s, rated
+rule                                        premise           95% CI    valid    units fail|prem  S/e med  silent    inf
+------------------------------------------------------------------------------------------------------------------------
+C  ceiling theory-distance (primary run)      0.000   [0.000, 0.013]    0.174     0/59         0    1.498   0.008  0.000
+P  paper Eq.5, 2 x short-hop kappa'           0.045   [0.024, 0.076]    0.216     1/59         0    1.247   0.097  0.000
+E1 long-hop kappa' (calibration labels)       0.024   [0.010, 0.049]    0.204     1/59         0    1.218   0.117  0.000
+E2 E1 + extrapolated curvature                0.024   [0.010, 0.049]    0.204     1/59         0    1.209   0.117  0.000
+E3 fleet-calibrated, conformal 90%            0.997   [0.981, 1.000]    0.997    58/59         0    0.676   0.360  0.243
+
+premise: share of unit-bins whose law residual beta covered (model-independent).
+valid: share of rows with S <= e. units: units valid on every row. fail|prem: bound
+failures on rows where the premise held - Proposition 1 says this must be 0.
+inf: share of rows where E3 had fewer than 9 calibration units and abstained.

@@ -1,0 +1,785 @@
+{
+ "methods": [
+  {
+   "hold_by_trial": {
+    "_57_1": true,
+    "_60_1": true,
+    "_63_1": true,
+    "_66_1": true
+   },
+   "hold_by_fit": {
+    "linear|0": true,
+    "poly3|0": true,
+    "knn5|0": true,
+    "krr_rbf|0": true,
+    "rf200|0": true,
+    "rf200|1": true,
+    "rf200|2": true,
+    "gbrt|0": true,
+    "gbrt|1": true,
+    "gbrt|2": true,
+    "mlp8|0": true,
+    "mlp8|1": true,
+    "mlp8|2": true,
+    "mlp16x16|0": true,
+    "mlp16x16|1": true,
+    "mlp16x16|2": true,
+    "mlp32x32|0": true,
+    "mlp32x32|1": true,
+    "mlp32x32|2": true
+   },
+   "hold_by_family": {
+    "linear": true,
+    "poly3": true,
+    "knn5": true,
+    "krr_rbf": true,
+    "rf200": true,
+    "gbrt": true,
+    "mlp8": true,
+    "mlp16x16": true,
+    "mlp32x32": true
+   },
+   "fits": 19,
+   "fits_all_held": 19,
+   "ci_fits": [
+    0.8235330881930346,
+    1.0
+   ],
+   "families": 9,
+   "families_all_held": 9,
+   "ci_families": [
+    0.6637328831200571,
+    1.0
+   ],
+   "failure_rate_by_family": {
+    "linear": 0.0,
+    "poly3": 0.0,
+    "knn5": 0.0,
+    "krr_rbf": 0.0,
+    "rf200": 0.0,
+    "gbrt": 0.0,
+    "mlp8": 0.0,
+    "mlp16x16": 0.0,
+    "mlp32x32": 0.0
+   },
+   "exchangeability_p_fit": 9.999000099990002e-05,
+   "failure_concentration_p_family": null,
+   "n_eff_crossed": 34.481800188456155,
+   "ci_n_eff_crossed": [
+    0.8985432145014721,
+    1.0
+   ],
+   "method": "SASES consensus",
+   "side": "lower",
+   "rows": 399,
+   "held": 399,
+   "rate": 1.0,
+   "ci_rows": [
+    0.9907972945765966,
+    1.0
+   ],
+   "cases": 21,
+   "cells_all_held": 21,
+   "ci_cells": [
+    0.8389023847809204,
+    1.0
+   ],
+   "splits_x_trials": 7,
+   "cases_all_held": 7,
+   "ci_cases": [
+    0.5903836027749966,
+    1.0
+   ],
+   "trials": 4,
+   "trials_all_held": 4,
+   "ci_trials": [
+    0.3976353643835253,
+    1.0
+   ],
+   "icc_trial": 0.02818349189909764,
+   "mean_cluster_size": 99.75,
+   "design_effect": 3.783119825035892,
+   "n_eff": 105.46850706644337,
+   "ci_n_eff": [
+    0.9656284724917309,
+    1.0
+   ],
+   "variance_share": {
+    "physical test trial": 0.028293601150944522,
+    "calibration split": 0.07786558466812907,
+    "representation": 0.06605476731319372,
+    "surrogate family": 0.3683964346688352,
+    "surrogate fit (family, seed)": 0.3888664252922667,
+    "case (repr, split, trial)": 0.21043073844192778
+   },
+   "exchangeability_eta2": 0.028293601150944522,
+   "exchangeability_p": 0.010498950104989501,
+   "failure_concentration_chi2": null,
+   "failure_concentration_p": null,
+   "per_trial": {
+    "_57_1": {
+     "rows": 57,
+     "held": 57,
+     "rate": 1.0,
+     "P": 192.0
+    },
+    "_60_1": {
+     "rows": 114,
+     "held": 114,
+     "rate": 1.0,
+     "P": 250.0
+    },
+    "_63_1": {
+     "rows": 114,
+     "held": 114,
+     "rate": 1.0,
+     "P": 300.0
+    },
+    "_66_1": {
+     "rows": 114,
+     "held": 114,
+     "rate": 1.0,
+     "P": 350.0
+    }
+   },
+   "leave_one_trial_out": {
+    "_57_1": {
+     "median_ratio": 0.6910000626835373,
+     "rank": 0.7880623904382678
+    },
+    "_60_1": {
+     "median_ratio": 0.6691471050550728,
+     "rank": 0.8048601280506575
+    },
+    "_63_1": {
+     "median_ratio": 0.7273340606140625,
+     "rank": 0.7817327120962976
+    },
+    "_66_1": {
+     "median_ratio": 0.7273340606140625,
+     "rank": 0.7852815610790195
+    }
+   },
+   "median_ratio": 0.7043645547162273,
+   "rank": 0.789892683274261
+  },
+  {
+   "hold_by_trial": {
+    "_57_1": false,
+    "_60_1": false,
+    "_63_1": false,
+    "_66_1": false
+   },
+   "hold_by_fit": {
+    "linear|0": true,
+    "poly3|0": true,
+    "knn5|0": true,
+    "krr_rbf|0": false,
+    "rf200|0": true,
+    "rf200|1": true,
+    "rf200|2": true,
+    "gbrt|0": true,
+    "gbrt|1": true,
+    "gbrt|2": true,
+    "mlp8|0": true,
+    "mlp8|1": false,
+    "mlp8|2": false,
+    "mlp16x16|0": false,
+    "mlp16x16|1": false,
+    "mlp16x16|2": false,
+    "mlp32x32|0": true,
+    "mlp32x32|1": true,
+    "mlp32x32|2": false
+   },
+   "hold_by_family": {
+    "linear": true,
+    "poly3": true,
+    "knn5": true,
+    "krr_rbf": false,
+    "rf200": true,
+    "gbrt": true,
+    "mlp8": false,
+    "mlp16x16": false,
+    "mlp32x32": false
+   },
+   "fits": 19,
+   "fits_all_held": 12,
+   "ci_fits": [
+    0.3835779233144053,
+    0.8371141278449004
+   ],
+   "families": 9,
+   "families_all_held": 5,
+   "ci_families": [
+    0.212008506778868,
+    0.8630043377348335
+   ],
+   "failure_rate_by_family": {
+    "linear": 0.0,
+    "poly3": 0.0,
+    "knn5": 0.0,
+    "krr_rbf": 1.0,
+    "rf200": 0.0,
+    "gbrt": 0.0,
+    "mlp8": 0.19047619047619047,
+    "mlp16x16": 0.1428571428571429,
+    "mlp32x32": 0.015873015873015928
+   },
+   "exchangeability_p_fit": 9.999000099990002e-05,
+   "failure_concentration_p_family": 9.999000099990002e-05,
+   "n_eff_crossed": 32.24282904676642,
+   "ci_n_eff_crossed": [
+    0.7324943631584544,
+    0.9734750098618205
+   ],
+   "method": "Calibration maximum",
+   "side": "lower",
+   "rows": 399,
+   "held": 356,
+   "rate": 0.8922305764411027,
+   "ci_rows": [
+    0.857588113960394,
+    0.9209015903795317
+   ],
+   "cases": 21,
+   "cells_all_held": 0,
+   "ci_cells": [
+    0.0,
+    0.1610976152190796
+   ],
+   "splits_x_trials": 7,
+   "cases_all_held": 0,
+   "ci_cases": [
+    0.0,
+    0.4096163972250034
+   ],
+   "trials": 4,
+   "trials_all_held": 0,
+   "ci_trials": [
+    0.0,
+    0.6023646356164746
+   ],
+   "icc_trial": 0.01937345174969153,
+   "mean_cluster_size": 99.75,
+   "design_effect": 2.9131283602820384,
+   "n_eff": 136.96615825104607,
+   "ci_n_eff": [
+    0.8278693227948432,
+    0.9387379616733925
+   ],
+   "variance_share": {
+    "physical test trial": 0.02177210419895956,
+    "calibration split": 0.052306504793687356,
+    "representation": 0.02386222708910718,
+    "surrogate family": 0.3911226640878448,
+    "surrogate fit (family, seed)": 0.4612424671953738,
+    "case (repr, split, trial)": 0.13421987335375388
+   },
+   "exchangeability_eta2": 0.02177210419895956,
+   "exchangeability_p": 0.0316968303169683,
+   "failure_concentration_chi2": 4.717729291873531,
+   "failure_concentration_p": 0.2014798520147985,
+   "per_trial": {
+    "_57_1": {
+     "rows": 57,
+     "held": 48,
+     "rate": 0.8421052631578947,
+     "P": 192.0
+    },
+    "_60_1": {
+     "rows": 114,
+     "held": 98,
+     "rate": 0.8596491228070176,
+     "P": 250.0
+    },
+    "_63_1": {
+     "rows": 114,
+     "held": 105,
+     "rate": 0.9210526315789473,
+     "P": 300.0
+    },
+    "_66_1": {
+     "rows": 114,
+     "held": 105,
+     "rate": 0.9210526315789473,
+     "P": 350.0
+    }
+   },
+   "leave_one_trial_out": {
+    "_57_1": {
+     "median_ratio": 0.7496893502917734,
+     "rank": 0.86443661971831
+    },
+    "_60_1": {
+     "median_ratio": 0.7498968040524914,
+     "rank": 0.856455399061033
+    },
+    "_63_1": {
+     "median_ratio": 0.7702339280123095,
+     "rank": 0.8906103286384978
+    },
+    "_66_1": {
+     "median_ratio": 0.7832741315647522,
+     "rank": 0.9043427230046949
+    }
+   },
+   "median_ratio": 0.7659743177251503,
+   "rank": 0.8782696177062377
+  },
+  {
+   "hold_by_trial": {
+    "_57_1": false,
+    "_60_1": false,
+    "_63_1": false,
+    "_66_1": false
+   },
+   "hold_by_fit": {
+    "linear|0": false,
+    "poly3|0": false,
+    "knn5|0": true,
+    "krr_rbf|0": false,
+    "rf200|0": true,
+    "rf200|1": true,
+    "rf200|2": true,
+    "gbrt|0": true,
+    "gbrt|1": true,
+    "gbrt|2": true,
+    "mlp8|0": true,
+    "mlp8|1": false,
+    "mlp8|2": true,
+    "mlp16x16|0": true,
+    "mlp16x16|1": false,
+    "mlp16x16|2": true,
+    "mlp32x32|0": false,
+    "mlp32x32|1": false,
+    "mlp32x32|2": false
+   },
+   "hold_by_family": {
+    "linear": false,
+    "poly3": false,
+    "knn5": true,
+    "krr_rbf": false,
+    "rf200": true,
+    "gbrt": true,
+    "mlp8": false,
+    "mlp16x16": false,
+    "mlp32x32": false
+   },
+   "fits": 19,
+   "fits_all_held": 11,
+   "ci_fits": [
+    0.3349978440117354,
+    0.7974785610228372
+   ],
+   "families": 9,
+   "families_all_held": 3,
+   "ci_families": [
+    0.0748546314196918,
+    0.7007049437914596
+   ],
+   "failure_rate_by_family": {
+    "linear": 0.23809523809523814,
+    "poly3": 1.0,
+    "knn5": 0.0,
+    "krr_rbf": 1.0,
+    "rf200": 0.0,
+    "gbrt": 0.0,
+    "mlp8": 0.11111111111111116,
+    "mlp16x16": 0.11111111111111116,
+    "mlp32x32": 0.6031746031746033
+   },
+   "exchangeability_p_fit": 9.999000099990002e-05,
+   "failure_concentration_p_family": 9.999000099990002e-05,
+   "n_eff_crossed": 39.35698763580005,
+   "ci_n_eff_crossed": [
+    0.5885746587797994,
+    0.8753606040192756
+   ],
+   "method": "Raw defect",
+   "side": "upper",
+   "rows": 399,
+   "held": 300,
+   "rate": 0.7518796992481203,
+   "ci_rows": [
+    0.7064693989186992,
+    0.7935086949772292
+   ],
+   "cases": 21,
+   "cells_all_held": 0,
+   "ci_cells": [
+    0.0,
+    0.1610976152190796
+   ],
+   "splits_x_trials": 7,
+   "cases_all_held": 0,
+   "ci_cases": [
+    0.0,
+    0.4096163972250034
+   ],
+   "trials": 4,
+   "trials_all_held": 0,
+   "ci_trials": [
+    0.0,
+    0.6023646356164746
+   ],
+   "icc_trial": 0.033365125350152264,
+   "mean_cluster_size": 99.75,
+   "design_effect": 4.2948061283275365,
+   "n_eff": 92.90291297860672,
+   "ci_n_eff": [
+    0.6514384230000414,
+    0.8356680398766761
+   ],
+   "variance_share": {
+    "physical test trial": 0.03214349021030945,
+    "calibration split": 0.06310204454617545,
+    "representation": 0.14664177625682862,
+    "surrogate family": 0.2594566623844344,
+    "surrogate fit (family, seed)": 0.2981900679770368,
+    "case (repr, split, trial)": 0.3324740324550555
+   },
+   "exchangeability_eta2": 0.03214349021030945,
+   "exchangeability_p": 0.0051994800519948,
+   "failure_concentration_chi2": 0.03358585858585859,
+   "failure_concentration_p": 1.0,
+   "per_trial": {
+    "_57_1": {
+     "rows": 57,
+     "held": 43,
+     "rate": 0.7543859649122807,
+     "P": 192.0
+    },
+    "_60_1": {
+     "rows": 114,
+     "held": 85,
+     "rate": 0.7456140350877193,
+     "P": 250.0
+    },
+    "_63_1": {
+     "rows": 114,
+     "held": 86,
+     "rate": 0.7543859649122807,
+     "P": 300.0
+    },
+    "_66_1": {
+     "rows": 114,
+     "held": 86,
+     "rate": 0.7543859649122807,
+     "P": 350.0
+    }
+   },
+   "leave_one_trial_out": {
+    "_57_1": {
+     "median_ratio": 1.303285350560175,
+     "rank": 0.7724960876369328
+    },
+    "_60_1": {
+     "median_ratio": 1.3188075473785035,
+     "rank": 0.7903755868544601
+    },
+    "_63_1": {
+     "median_ratio": 1.281660823901005,
+     "rank": 0.7720657276995305
+    },
+    "_66_1": {
+     "median_ratio": 1.273711318692463,
+     "rank": 0.7721830985915494
+    }
+   },
+   "median_ratio": 1.2825818875019375,
+   "rank": 0.7765761234071095
+  },
+  {
+   "hold_by_trial": {
+    "_57_1": false,
+    "_60_1": false,
+    "_63_1": false,
+    "_66_1": false
+   },
+   "hold_by_fit": {
+    "linear|0": false,
+    "poly3|0": false,
+    "knn5|0": true,
+    "krr_rbf|0": false,
+    "rf200|0": true,
+    "rf200|1": true,
+    "rf200|2": true,
+    "gbrt|0": true,
+    "gbrt|1": true,
+    "gbrt|2": true,
+    "mlp8|0": false,
+    "mlp8|1": false,
+    "mlp8|2": false,
+    "mlp16x16|0": false,
+    "mlp16x16|1": false,
+    "mlp16x16|2": false,
+    "mlp32x32|0": false,
+    "mlp32x32|1": false,
+    "mlp32x32|2": false
+   },
+   "hold_by_family": {
+    "linear": false,
+    "poly3": false,
+    "knn5": true,
+    "krr_rbf": false,
+    "rf200": true,
+    "gbrt": true,
+    "mlp8": false,
+    "mlp16x16": false,
+    "mlp32x32": false
+   },
+   "fits": 19,
+   "fits_all_held": 7,
+   "ci_fits": [
+    0.16288587215509961,
+    0.6164220766855947
+   ],
+   "families": 9,
+   "families_all_held": 3,
+   "ci_families": [
+    0.0748546314196918,
+    0.7007049437914596
+   ],
+   "failure_rate_by_family": {
+    "linear": 0.33333333333333337,
+    "poly3": 1.0,
+    "knn5": 0.0,
+    "krr_rbf": 0.5238095238095238,
+    "rf200": 0.0,
+    "gbrt": 0.0,
+    "mlp8": 0.2063492063492064,
+    "mlp16x16": 0.38095238095238093,
+    "mlp32x32": 0.6349206349206349
+   },
+   "exchangeability_p_fit": 9.999000099990002e-05,
+   "failure_concentration_p_family": 9.999000099990002e-05,
+   "n_eff_crossed": 41.131593418742966,
+   "ci_n_eff_crossed": [
+    0.5469793997518918,
+    0.8400613783041029
+   ],
+   "method": "OLS error predictor",
+   "side": "upper",
+   "rows": 399,
+   "held": 283,
+   "rate": 0.7092731829573935,
+   "ci_rows": [
+    0.6620241639361278,
+    0.7533860945805906
+   ],
+   "cases": 21,
+   "cells_all_held": 0,
+   "ci_cells": [
+    0.0,
+    0.1610976152190796
+   ],
+   "splits_x_trials": 7,
+   "cases_all_held": 0,
+   "ci_cases": [
+    0.0,
+    0.4096163972250034
+   ],
+   "trials": 4,
+   "trials_all_held": 0,
+   "ci_trials": [
+    0.0,
+    0.6023646356164746
+   ],
+   "icc_trial": 0.033367507602740945,
+   "mean_cluster_size": 99.75,
+   "design_effect": 4.295041375770668,
+   "n_eff": 92.89782451243711,
+   "ci_n_eff": [
+    0.6058789484259443,
+    0.7988767240361477
+   ],
+   "variance_share": {
+    "physical test trial": 0.03214526263313693,
+    "calibration split": 0.008192929181967526,
+    "representation": 0.12307832357199464,
+    "surrogate family": 0.21741089097564276,
+    "surrogate fit (family, seed)": 0.2763113858876122,
+    "case (repr, split, trial)": 0.2117061646701939
+   },
+   "exchangeability_eta2": 0.03214526263313693,
+   "exchangeability_p": 0.0037996200379962005,
+   "failure_concentration_chi2": 0.40109053247227977,
+   "failure_concentration_p": 0.9405059494050595,
+   "per_trial": {
+    "_57_1": {
+     "rows": 57,
+     "held": 39,
+     "rate": 0.6842105263157895,
+     "P": 192.0
+    },
+    "_60_1": {
+     "rows": 114,
+     "held": 80,
+     "rate": 0.7017543859649122,
+     "P": 250.0
+    },
+    "_63_1": {
+     "rows": 114,
+     "held": 83,
+     "rate": 0.7280701754385965,
+     "P": 300.0
+    },
+    "_66_1": {
+     "rows": 114,
+     "held": 81,
+     "rate": 0.7105263157894737,
+     "P": 350.0
+    }
+   },
+   "leave_one_trial_out": {
+    "_57_1": {
+     "median_ratio": 1.2523359276190087,
+     "rank": 0.8342136150234742
+    },
+    "_60_1": {
+     "median_ratio": 1.2401869874736076,
+     "rank": 0.8427230046948359
+    },
+    "_63_1": {
+     "median_ratio": 1.2337021172137348,
+     "rank": 0.8390845070422535
+    },
+    "_66_1": {
+     "median_ratio": 1.2115033030968032,
+     "rank": 0.8386150234741785
+    }
+   },
+   "median_ratio": 1.2376830410835618,
+   "rank": 0.8384473507712946
+  }
+ ],
+ "paired": [
+  {
+   "method": "Calibration maximum",
+   "unit": "test trial",
+   "units": 4,
+   "sases_only": 4,
+   "competitor_only": 0,
+   "p_one_sided": 0.0625,
+   "smallest_attainable_p": 0.0625
+  },
+  {
+   "method": "Calibration maximum",
+   "unit": "surrogate fit",
+   "units": 19,
+   "sases_only": 7,
+   "competitor_only": 0,
+   "p_one_sided": 0.0078125,
+   "smallest_attainable_p": 1.9073486328125e-06
+  },
+  {
+   "method": "Calibration maximum",
+   "unit": "surrogate family",
+   "units": 9,
+   "sases_only": 4,
+   "competitor_only": 0,
+   "p_one_sided": 0.0625,
+   "smallest_attainable_p": 0.001953125
+  },
+  {
+   "method": "Raw defect",
+   "unit": "test trial",
+   "units": 4,
+   "sases_only": 4,
+   "competitor_only": 0,
+   "p_one_sided": 0.0625,
+   "smallest_attainable_p": 0.0625
+  },
+  {
+   "method": "Raw defect",
+   "unit": "surrogate fit",
+   "units": 19,
+   "sases_only": 8,
+   "competitor_only": 0,
+   "p_one_sided": 0.00390625,
+   "smallest_attainable_p": 1.9073486328125e-06
+  },
+  {
+   "method": "Raw defect",
+   "unit": "surrogate family",
+   "units": 9,
+   "sases_only": 6,
+   "competitor_only": 0,
+   "p_one_sided": 0.015625,
+   "smallest_attainable_p": 0.001953125
+  },
+  {
+   "method": "OLS error predictor",
+   "unit": "test trial",
+   "units": 4,
+   "sases_only": 4,
+   "competitor_only": 0,
+   "p_one_sided": 0.0625,
+   "smallest_attainable_p": 0.0625
+  },
+  {
+   "method": "OLS error predictor",
+   "unit": "surrogate fit",
+   "units": 19,
+   "sases_only": 12,
+   "competitor_only": 0,
+   "p_one_sided": 0.000244140625,
+   "smallest_attainable_p": 1.9073486328125e-06
+  },
+  {
+   "method": "OLS error predictor",
+   "unit": "surrogate family",
+   "units": 9,
+   "sases_only": 6,
+   "competitor_only": 0,
+   "p_one_sided": 0.015625,
+   "smallest_attainable_p": 0.001953125
+  }
+ ],
+ "sweep": {
+  "premise held (target in ball)": {
+   "rows": 931,
+   "held": 931,
+   "ci_rows": [
+    0.9960455629251846,
+    1.0
+   ],
+   "cells": 49,
+   "cells_all_held": 49,
+   "ci_cells": [
+    0.9274807363357226,
+    1.0
+   ],
+   "trials": 4,
+   "trials_all_held": 4,
+   "ci_trials": [
+    0.3976353643835253,
+    1.0
+   ]
+  },
+  "certificate valid (S <= e)": {
+   "rows": 931,
+   "held": 931,
+   "ci_rows": [
+    0.9960455629251846,
+    1.0
+   ],
+   "cells": 49,
+   "cells_all_held": 49,
+   "ci_cells": [
+    0.9274807363357226,
+    1.0
+   ],
+   "trials": 4,
+   "trials_all_held": 4,
+   "ci_trials": [
+    0.3976353643835253,
+    1.0
+   ]
+  }
+ },
+ "permutations": 10000,
+ "note": "CIs are two-sided 95% Clopper-Pearson. The trial level is the only one that counts independent physical outcomes.",
+ "protocol_sha256": "57722a03c0f076797cfa1b85a5715d1be005f2485a68024777b54833ee7a646c",
+ "source_sha256": "b37e7be5c5e1e11ffc1b5a249a12a47e2d172f6b9a53389b4c4c67dd348571b5"
+}

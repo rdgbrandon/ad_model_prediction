@@ -1,0 +1,86 @@
+MULTI-MODEL / MULTI-REPRESENTATION AUDIT
+rows 931   representations 7   model fits 19   protocol b41b71052344
+Representations share the same 21 trials and one apparatus; they are robustness checks, not independent replications.
+
+
+=== canonical_146: mean S/e by representation (rows) and model family (columns) ===
+repr          linear     poly3      knn5   krr_rbf     rf200      gbrt      mlp8  mlp16x16  mlp32x32      ALL    cover    kappa
+-------------------------------------------------------------------------------------------------------------------------------
+ctr12          0.501     0.933     0.683     0.177     0.714     0.714     0.677     0.185     0.211    0.516     1.00    15.80
+ctr24w         0.589     0.919     0.675     0.142     0.724     0.724     0.715     0.224     0.237    0.537     1.00    25.18
+ctrlin8        0.394     0.901     0.685     0.135     0.727     0.727     0.737     0.142     0.277    0.524     1.00    18.63
+ctrshort       0.534     0.937     0.696     0.182     0.719     0.720     0.687     0.490     0.334    0.590     1.00    17.63
+ctrmed         0.564     0.940     0.711     0.169     0.716     0.716     0.692     0.456     0.095    0.548     1.00    16.55
+ctrshape       0.856     0.871     0.669     0.076     0.746     0.746     0.227     0.684     0.621    0.608     1.00    10.10
+pist12         0.056     0.928     0.662     0.124     0.703     0.703     0.469     0.232     0.036    0.432     1.00    20.20
+
+
+=== canonical_192: mean S/e by representation (rows) and model family (columns) ===
+repr          linear     poly3      knn5   krr_rbf     rf200      gbrt      mlp8  mlp16x16  mlp32x32      ALL    cover    kappa
+-------------------------------------------------------------------------------------------------------------------------------
+ctr12          0.742     0.969     0.803     0.402     0.823     0.823     0.806     0.290     0.557    0.674     1.00    11.93
+ctr24w         0.780     0.963     0.800     0.351     0.831     0.831     0.827     0.370     0.556    0.691     1.00    18.60
+ctrlin8        0.654     0.953     0.822     0.301     0.845     0.845     0.851     0.274     0.468    0.662     1.00    14.02
+ctrshort       0.752     0.970     0.822     0.393     0.835     0.835     0.820     0.710     0.624    0.758     1.00    13.50
+ctrmed         0.776     0.971     0.830     0.361     0.834     0.834     0.825     0.715     0.388    0.722     1.00    12.75
+ctrshape       0.945     0.935     0.883     0.160     0.913     0.913     0.478     0.865     0.832    0.786     1.00     7.47
+pist12         0.284     0.967     0.775     0.286     0.801     0.801     0.569     0.394     0.264    0.569     1.00    15.12
+
+
+=== premise coverage and margins (both configurations pooled) ===
+repr         dim    cover min margin     mean e     mean S  S>1 frac     valid
+------------------------------------------------------------------------------
+ctr12         12    1.000      1.123      22.75      17.53     0.865     1.000
+ctr24w        24    1.000      1.499      31.68      24.23     0.857     1.000
+ctrlin8        8    1.000      1.266      23.40      17.36     0.820     1.000
+ctrshort      12    1.000      1.278      26.22      20.96     0.962     1.000
+ctrmed        12    1.000      1.098      25.43      20.02     0.902     1.000
+ctrshape      12    1.000      0.400       8.45       6.66     0.872     1.000
+pist12        12    1.000      1.567      28.17      21.20     0.722     1.000
+
+
+=== consensus (all LAWCAL subsets >= 3) vs one region, canonical_192 ===
+repr        one region   consensus      gain  blend gain       balls  cons cover
+--------------------------------------------------------------------------------
+ctr12            0.674       0.698     0.023    7.14e-04           5       1.000
+ctr24w           0.691       0.716     0.025    2.63e-03           5       1.000
+ctrlin8          0.662       0.680     0.018    2.44e-05           5       1.000
+ctrshort         0.758       0.772     0.014    1.26e-05           5       1.000
+ctrmed           0.722       0.744     0.022    6.19e-04           5       1.000
+ctrshape         0.786       0.794     0.008    5.29e-04           5       1.000
+pist12           0.569       0.580     0.011    3.60e-03           5       1.000
+canonical_146 has three calibration trials, so exactly one subset: its gain is 0 by definition.
+
+
+=== model families pooled over representations ===
+model        seeds    mean e  mean S/e  S>1 frac     cover worst S/e
+--------------------------------------------------------------------
+linear           1     13.36     0.587     0.918     1.000     0.000
+poly3            1    215.78     0.937     1.000     1.000     0.852
+knn5             1     13.27     0.741     1.000     1.000     0.565
+krr_rbf          1     14.04     0.220     0.531     1.000     0.000
+rf200            3     14.51     0.772     1.000     1.000     0.610
+gbrt             3     14.51     0.772     1.000     1.000     0.611
+mlp8             3     12.77     0.660     0.884     1.000     0.000
+mlp16x16         3      9.12     0.419     0.687     1.000     0.000
+mlp32x32         3     13.89     0.374     0.707     1.000     0.000
+
+
+=== seed spread of S/e, stochastic families, canonical_192 ===
+repr           model       min       max    spread
+--------------------------------------------------
+ctr12       mlp16x16     0.080     0.680     0.600
+ctr12       mlp32x32     0.401     0.679     0.278
+ctr24w      mlp16x16     0.117     0.702     0.585
+ctr24w      mlp32x32     0.380     0.770     0.389
+ctrlin8     mlp16x16     0.000     0.675     0.675
+ctrlin8     mlp32x32     0.018     0.746     0.728
+ctrshort    mlp32x32     0.474     0.761     0.286
+ctrmed      mlp16x16     0.625     0.812     0.187
+ctrmed      mlp32x32     0.196     0.528     0.332
+ctrshape        mlp8     0.170     0.739     0.569
+ctrshape    mlp16x16     0.817     0.898     0.081
+ctrshape    mlp32x32     0.790     0.883     0.093
+pist12          mlp8     0.154     0.778     0.624
+pist12      mlp16x16     0.064     0.774     0.710
+pist12      mlp32x32     0.000     0.467     0.467

@@ -1,0 +1,112 @@
+PHYSICS-INFORMED SURROGATES: DOES TRAINING ON THE LAW BLIND THE CERTIFICATE?
+882 rows, 150 distinct fits. Four distinct test trials; seeds and weights are not independent trials.
+Validity 882/882 rows; premise held 882/882; all fits converged: False
+
+
+=== ctr12 | trained toward the certificate law ===
+w           mean e    mean S    mean D   S/e med   silent   own resid vs cert law   train e
+-------------------------------------------------------------------------------------------
+0            13.18      9.80     17.46     0.746    0.000      1.6930      1.5287      0.24
+0.01          7.31      0.01      2.82     0.000    1.000      0.3381      0.3381      0.25
+0.1          11.67      0.91      6.95     0.000    0.714      0.0480      0.0480      0.25
+1            12.12      1.09      7.40     0.000    0.714      0.0134      0.0134      0.25
+10           12.18      1.12      7.46     0.004    0.714      0.0044      0.0044      0.25
+100          12.19      1.13      7.48     0.005    0.714      0.0015      0.0015      0.25
+1000         12.20      1.13      7.48     0.005    0.714      0.0009      0.0009      0.26
+
+
+=== ctr12 | trained toward the training law ===
+w           mean e    mean S    mean D   S/e med   silent   own resid vs cert law   train e
+-------------------------------------------------------------------------------------------
+0            13.18      9.80     17.46     0.746    0.000      1.6930      1.5287      0.24
+0.01         10.38      5.58     13.25     0.620    0.000      0.3132      1.1443      0.24
+0.1          13.27      7.50     15.16     0.655    0.000      0.0480      1.1673      0.25
+1            13.66      7.78     15.44     0.660    0.000      0.0147      1.1729      0.25
+10           13.71      7.82     15.49     0.661    0.000      0.0042      1.1738      0.25
+100          13.72      7.83     15.50     0.661    0.000      0.0014      1.1739      0.25
+1000         13.73      7.84     15.50     0.661    0.000      0.0007      1.1739      0.25
+
+
+=== ctr12 | trained toward the KZ theory ===
+w           mean e    mean S    mean D   S/e med   silent   own resid vs cert law   train e
+-------------------------------------------------------------------------------------------
+0            13.18      9.80     17.46     0.746    0.000      1.6930      1.5287      0.24
+0.01         13.19      9.81     17.47     0.748    0.000      0.1745      1.5292      0.24
+0.1          11.39      8.16     15.83     0.723    0.000      0.0436      1.4289      0.25
+1            11.23      8.03     15.69     0.720    0.000      0.0104      1.4156      0.25
+10           11.23      8.03     15.69     0.720    0.000      0.0034      1.4138      0.24
+100          11.24      8.04     15.70     0.720    0.000      0.0013      1.4138      0.24
+1000         11.25      8.04     15.70     0.720    0.000      0.0005      1.4138      0.24
+
+
+=== pist12 | trained toward the certificate law ===
+w           mean e    mean S    mean D   S/e med   silent   own resid vs cert law   train e
+-------------------------------------------------------------------------------------------
+0            14.75     10.69     20.46     0.722    0.000      2.1540      1.9375      0.23
+0.01         10.98      0.29      5.22     0.000    0.857      0.4055      0.4055      0.23
+0.1          16.25      1.94     10.37     0.038    0.571      0.0568      0.0568      0.23
+1            16.83      2.27     10.94     0.071    0.429      0.0151      0.0151      0.23
+10           16.90      2.32     11.01     0.075    0.429      0.0049      0.0049      0.23
+100          16.91      2.33     11.03     0.075    0.429      0.0015      0.0015      0.23
+1000         16.91      2.33     11.03     0.075    0.429      0.0012      0.0012      0.25
+
+
+=== pist12 | trained toward the training law ===
+w           mean e    mean S    mean D   S/e med   silent   own resid vs cert law   train e
+-------------------------------------------------------------------------------------------
+0            14.75     10.69     20.46     0.722    0.000      2.1540      1.9375      0.23
+0.01          6.13      0.38      8.29     0.000    0.857      0.3076      1.0537      0.23
+0.1           8.99      0.99      8.72     0.013    0.619      0.0499      0.8869      0.23
+1             9.35      1.14      8.88     0.037    0.571      0.0130      0.8723      0.23
+10            9.39      1.15      8.90     0.039    0.571      0.0049      0.8705      0.23
+100           9.40      1.16      8.90     0.039    0.571      0.0012      0.8704      0.23
+1000          9.40      1.16      8.91     0.040    0.571      0.0010      0.8704      0.24
+
+
+=== pist12 | trained toward the KZ theory ===
+w           mean e    mean S    mean D   S/e med   silent   own resid vs cert law   train e
+-------------------------------------------------------------------------------------------
+0            14.75     10.69     20.46     0.722    0.000      2.1540      1.9375      0.23
+0.01         14.73     10.67     20.45     0.722    0.000      0.1755      1.9365      0.23
+0.1          12.78      8.77     18.54     0.683    0.000      0.0463      1.8188      0.23
+1            12.62      8.65     18.42     0.681    0.000      0.0153      1.8043      0.23
+10           12.65      8.67     18.45     0.681    0.000      0.0034      1.8024      0.23
+100          12.66      8.68     18.46     0.682    0.000      0.0012      1.8023      0.23
+1000         12.66      8.69     18.46     0.682    0.000      0.0004      1.8023      0.23
+
+
+=== Verdicts on the predeclared hypotheses ===
+rho = Spearman of the quantity against log(w), within each seed x split x trial.
+
+[ctr12]
+  H1 certificate law  own law residual vs w: rho -1.000 over 21 series  -> HOLDS
+  H1 training law     own law residual vs w: rho -1.000 over 21 series  -> HOLDS
+  H1 KZ theory        own law residual vs w: rho -1.000 over 21 series  -> HOLDS
+  H2 certificate law: S/e vs w: rho -0.129 over 21 series; median S/e 0.746 -> 0.005  -> NOT SUPPORTED
+  H3 KZ theory: e vs w rho -0.628, S vs w rho -0.597  -> NOT SUPPORTED
+
+[pist12]
+  H1 certificate law  own law residual vs w: rho -0.995 over 21 series  -> HOLDS
+  H1 training law     own law residual vs w: rho -1.000 over 21 series  -> HOLDS
+  H1 KZ theory        own law residual vs w: rho -1.000 over 21 series  -> HOLDS
+  H2 certificate law: S/e vs w: rho -0.016 over 21 series; median S/e 0.722 -> 0.075  -> NOT SUPPORTED
+  H3 KZ theory: e vs w rho -0.616, S vs w rho -0.594  -> NOT SUPPORTED
+
+
+=== H2 by the protocol's own wording: "falsified if S/e is flat or rising" ===
+The rank-trend statistic above was chosen before the run, and it was a poor
+choice: the response is a STEP at the smallest weight, then flat, and a
+monotone trend test cannot see a step. Both are reported; the protocol text
+is the governing criterion. Plateau = mean over w >= 0.1.
+repr    arm                  e w=0  e plat.     S w=0   S plat.   S/e w=0  S/e plat  sil w=0 sil plat
+-----------------------------------------------------------------------------------------------------
+ctr12   certificate law      13.18    12.07      9.80      1.07     0.746     0.004    0.000    0.714
+ctr12   training law         13.18    13.62      9.80      7.75     0.746     0.660    0.000    0.000
+ctr12   KZ theory            13.18    11.27      9.80      8.06     0.746     0.720    0.000    0.000
+pist12  certificate law      14.75    16.76     10.69      2.24     0.722     0.075    0.000    0.457
+pist12  training law         14.75     9.31     10.69      1.12     0.722     0.039    0.000    0.581
+pist12  KZ theory            14.75    12.67     10.69      8.69     0.722     0.682    0.000    0.000
+
+Convergence: 24 of 252 fit-configurations hit the 20,000-iteration cap, all at
+w = 1000, where the own law residual is already <= 0.0018 and every table entry
+matches w = 100 to two decimals. They are kept, not dropped.

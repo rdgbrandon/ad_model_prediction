@@ -1,0 +1,6 @@
+advection  dev     | global b: valid 1.000 (no beta 1.000) S>0 0.08 S/e 0.00 rho 0.57 | local b(z): valid 1.000 S>0 0.14 S/e 0.00 (FNO 0.00, when >0 0.39) rho 0.33 | Lipschitz S>0 0.00 | conformal cover 0.61 | premise 1.000
+advection  confirm | global b: valid 1.000 (no beta 1.000) S>0 0.07 S/e 0.00 rho 0.57 | local b(z): valid 1.000 S>0 0.15 S/e 0.00 (FNO 0.00, when >0 0.45) rho 0.25 | Lipschitz S>0 0.00 | conformal cover 0.63 | premise 1.000
+diffusion  dev     | global b: valid 0.997 (no beta 0.997) S>0 0.36 S/e 0.00 rho 0.05 | local b(z): valid 0.993 S>0 0.42 S/e 0.00 (FNO 0.47, when >0 0.65) rho 0.10 | Lipschitz S>0 0.00 | conformal cover 0.36 | premise 1.000
+diffusion  confirm | global b: valid 0.997 (no beta 0.997) S>0 0.36 S/e 0.00 rho 0.05 | local b(z): valid 0.994 S>0 0.42 S/e 0.00 (FNO 0.45, when >0 0.63) rho 0.11 | Lipschitz S>0 0.00 | conformal cover 0.36 | premise 1.000
+advdiff    dev     | global b: valid 1.000 (no beta 0.982) S>0 0.01 S/e 0.00 rho 0.45 | local b(z): valid 1.000 S>0 0.01 S/e 0.00 (FNO 0.00, when >0 0.08) rho 0.43 | Lipschitz S>0 0.00 | conformal cover 0.33 | premise 1.000
+advdiff    confirm | global b: valid 1.000 (no beta 0.984) S>0 0.01 S/e 0.00 rho 0.46 | local b(z): valid 1.000 S>0 0.01 S/e 0.00 (FNO 0.00, when >0 0.09) rho 0.46 | Lipschitz S>0 0.00 | conformal cover 0.33 | premise 1.000

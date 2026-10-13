@@ -1,0 +1,130 @@
+ARE THE ROWS INDEPENDENT, AND WHAT DO THEY REALLY SUPPORT?
+CIs are two-sided 95% Clopper-Pearson. The trial level is the only one that counts independent physical outcomes.
+
+
+=== 1. The slide 25 table, at every sample size the rows could claim ===
+method               side         rows      95% CI rows    trials    95% CI trials    Kish n      95% CI Kish
+-------------------------------------------------------------------------------------------------------------
+SASES consensus      lower     399/399   [0.991, 1.000]       4/4   [0.398, 1.000]     105.5   [0.966, 1.000]
+Calibration maximum  lower     356/399   [0.858, 0.921]       0/4   [0.000, 0.602]     137.0   [0.828, 0.939]
+Raw defect           upper     300/399   [0.706, 0.794]       0/4   [0.000, 0.602]      92.9   [0.651, 0.836]
+OLS error predictor  upper     283/399   [0.662, 0.753]       0/4   [0.000, 0.602]      92.9   [0.606, 0.799]
+A trial counts as held only if the method held on every row of that trial.
+
+=== 1b. The intermediate groupings ===
+method                split x trial           95% CIrepr x split x trial           95% CI
+-----------------------------------------------------------------------------------------
+SASES consensus                 7/7   [0.590, 1.000]           21/21   [0.839, 1.000]
+Calibration maximum             0/7   [0.000, 0.410]            0/21   [0.000, 0.161]
+Raw defect                      0/7   [0.000, 0.410]            0/21   [0.000, 0.161]
+OLS error predictor             0/7   [0.000, 0.410]            0/21   [0.000, 0.161]
+
+
+=== 2. How dependent are the rows? ===
+Share of the variance of the margin (e - score)/e explained by each grouping.
+If rows were independent draws, no grouping would explain much.
+grouping                        SASES consen Calibration    Raw defect OLS error pr
+-----------------------------------------------------------------------------------
+physical test trial                    0.028        0.022        0.032        0.032
+calibration split                      0.078        0.052        0.063        0.008
+representation                         0.066        0.024        0.147        0.123
+surrogate family                       0.368        0.391        0.259        0.217
+surrogate fit (family, seed)           0.389        0.461        0.298        0.276
+case (repr, split, trial)              0.210        0.134        0.332        0.212
+-----------------------------------------------------------------------------------
+ICC(1) within test trial               0.028        0.019        0.033        0.033
+design effect                            3.8          2.9          4.3          4.3
+effective n (Kish)                     105.5        137.0         92.9         92.9
+exchangeability p (trial)             0.0105       0.0317       0.0052       0.0038
+
+exchangeability p: permutation test that the between-trial share of variance
+is no larger than chance. Small p means rows are NOT exchangeable across trials.
+
+
+=== 3. Where do the failures happen? ===
+SASES consensus       192 mW  57/57    250 mW 114/114   300 mW 114/114   350 mW 114/114
+Calibration maximum   192 mW  48/57    250 mW  98/114   300 mW 105/114   350 mW 105/114   concentration p = 0.2015
+Raw defect            192 mW  43/57    250 mW  85/114   300 mW  86/114   350 mW  86/114   concentration p = 1.0000
+OLS error predictor   192 mW  39/57    250 mW  80/114   300 mW  83/114   350 mW  81/114   concentration p = 0.9405
+
+concentration p: permutation chi-square that failures are spread evenly over
+trials. Small p means they cluster in particular trials.
+
+
+=== 4. Leave one test trial out: how much does any single trial move the summary? ===
+method               trial left out    median s/e      rank rho
+---------------------------------------------------------------
+SASES consensus      (none)               0.704         0.790
+                     192 mW               0.691         0.788
+                     250 mW               0.669         0.805
+                     300 mW               0.727         0.782
+                     350 mW               0.727         0.785
+Calibration maximum  (none)               0.766         0.878
+                     192 mW               0.750         0.864
+                     250 mW               0.750         0.856
+                     300 mW               0.770         0.891
+                     350 mW               0.783         0.904
+Raw defect           (none)               1.283         0.777
+                     192 mW               1.303         0.772
+                     250 mW               1.319         0.790
+                     300 mW               1.282         0.772
+                     350 mW               1.274         0.772
+OLS error predictor  (none)               1.238         0.838
+                     192 mW               1.252         0.834
+                     250 mW               1.240         0.843
+                     300 mW               1.234         0.839
+                     350 mW               1.212         0.839
+
+
+=== 5. The 931-row sweep, same treatment ===
+indicator                             rows           95% CI     cells           95% CI    trials           95% CI
+-----------------------------------------------------------------------------------------------------------------
+premise held (target in ball)      931/931   [0.996, 1.000]     49/49   [0.927, 1.000]       4/4   [0.398, 1.000]
+certificate valid (S <= e)         931/931   [0.996, 1.000]     49/49   [0.927, 1.000]       4/4   [0.398, 1.000]
+
+
+=== 6. Two different claims, two different sample sizes ===
+"Holds on a new experiment" generalises over test trials (n = 4).
+"Holds for a new surrogate on these experiments" generalises over fits.
+method                   trials           95% CI      fits           95% CI   families           95% CI
+-------------------------------------------------------------------------------------------------------
+SASES consensus             4/4   [0.398, 1.000]     19/19   [0.824, 1.000]        9/9   [0.664, 1.000]
+Calibration maximum         0/4   [0.000, 0.602]     12/19   [0.384, 0.837]        5/9   [0.212, 0.863]
+Raw defect                  0/4   [0.000, 0.602]     11/19   [0.335, 0.797]        3/9   [0.075, 0.701]
+OLS error predictor         0/4   [0.000, 0.602]      7/19   [0.163, 0.616]        3/9   [0.075, 0.701]
+
+=== 7. The dependence is crossed: by surrogate as well as by trial ===
+method                 Kish (trial)     crossed n95% CI crossed   exch. p (fit)fail conc. p (fam)
+-------------------------------------------------------------------------------------------------
+SASES consensus               105.5          34.5  [0.899, 1.000]        0.0001              --
+Calibration maximum           137.0          32.2  [0.732, 0.973]        0.0001          0.0001
+Raw defect                     92.9          39.4  [0.589, 0.875]        0.0001          0.0001
+OLS error predictor            92.9          41.1  [0.547, 0.840]        0.0001          0.0001
+
+crossed n: Var(mean) ~ s2_fit/n_fit + s2_trial/n_trial + s2_res/N, with the
+variance shares of section 2 standing in for components. It sizes the
+uncertainty of an average over these rows, not a count of experiments.
+
+Failure rate by surrogate family (competitors only):
+method                   linear     poly3      knn5   krr_rbf     rf200      gbrt      mlp8  mlp16x16  mlp32x32
+---------------------------------------------------------------------------------------------------------------
+SASES consensus            0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.00
+Calibration maximum        0.00      0.00      0.00      1.00      0.00      0.00      0.19      0.14      0.02
+Raw defect                 0.24      1.00      0.00      1.00      0.00      0.00      0.11      0.11      0.60
+OLS error predictor        0.33      1.00      0.00      0.52      0.00      0.00      0.21      0.38      0.63
+
+
+=== 8. Paired tests: SASES against each competitor ===
+Same trials and fits score every method, so these are exact sign tests on the
+units where the two methods disagree about holding on every row.
+competitor           unit             units  SASES only  comp. only p (1-sided)min attainable
+---------------------------------------------------------------------------------------------
+Calibration maximum  test trial           4           4           0      0.0625        0.0625
+Calibration maximum  surrogate fit       19           7           0      0.0078        0.0000
+Calibration maximum  surrogate family      9           4           0      0.0625        0.0020
+Raw defect           test trial           4           4           0      0.0625        0.0625
+Raw defect           surrogate fit       19           8           0      0.0039        0.0000
+Raw defect           surrogate family      9           6           0      0.0156        0.0020
+OLS error predictor  test trial           4           4           0      0.0625        0.0625
+OLS error predictor  surrogate fit       19          12           0      0.0002        0.0000
+OLS error predictor  surrogate family      9           6           0      0.0156        0.0020

@@ -1,0 +1,26 @@
+{
+ "A": {
+  "rows": 1728,
+  "premise": 0.453125,
+  "validity": 0.6307870370370371,
+  "validity_given_premise": 1.0,
+  "units_all_covered": 10,
+  "units": 48,
+  "median_S_over_e": 0.9830196444575037,
+  "silent": 0.0630787037037037,
+  "median_rate": 0.7372932197520365,
+  "median_beta_over_zeta": 0.916856692153601
+ },
+ "B": {
+  "rows": 819,
+  "premise": 0.01098901098901099,
+  "validity": 0.1794871794871795,
+  "validity_given_premise": 1.0,
+  "units_all_covered": 0,
+  "units": 25,
+  "median_S_over_e": 1.3630083000419724,
+  "silent": 0.08669108669108669,
+  "median_rate": 0.7139512401882414,
+  "median_beta_over_zeta": 0.381938002910219
+ }
+}

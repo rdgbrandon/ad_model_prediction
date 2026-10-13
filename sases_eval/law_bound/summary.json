@@ -1,0 +1,81 @@
+{
+ "capillary": {
+  "canonical_146": [
+   {
+    "P": 192.0,
+    "zeta": 2.40276385082326,
+    "beta_C": 4.326491574345578,
+    "beta_P": 2.9725231869328974,
+    "bands_outside_P": 0,
+    "bands_outside_C": 0
+   },
+   {
+    "P": 250.0,
+    "zeta": 5.441231700283697,
+    "beta_C": 8.496230961736769,
+    "beta_P": 5.837349524740454,
+    "bands_outside_P": 0,
+    "bands_outside_C": 0
+   },
+   {
+    "P": 300.0,
+    "zeta": 7.251290512487055,
+    "beta_C": 11.376278712404138,
+    "beta_P": 7.816091091948435,
+    "bands_outside_P": 0,
+    "bands_outside_C": 0
+   },
+   {
+    "P": 350.0,
+    "zeta": 8.9975640523779,
+    "beta_C": 13.811324389433265,
+    "beta_P": 9.489093248968617,
+    "bands_outside_P": 0,
+    "bands_outside_C": 0
+   }
+  ],
+  "canonical_192": [
+   {
+    "P": 250.0,
+    "zeta": 2.025215060514876,
+    "beta_C": 3.1480182108780523,
+    "beta_P": 4.631419659654801,
+    "bands_outside_P": 0,
+    "bands_outside_C": 0
+   },
+   {
+    "P": 300.0,
+    "zeta": 3.2198897301251117,
+    "beta_C": 5.322360999474174,
+    "beta_P": 7.830350943830535,
+    "bands_outside_P": 0,
+    "bands_outside_C": 0
+   },
+   {
+    "P": 350.0,
+    "zeta": 4.44773646060315,
+    "beta_C": 7.160741632754844,
+    "beta_P": 10.535008806826157,
+    "bands_outside_P": 0,
+    "bands_outside_C": 0
+   }
+  ]
+ },
+ "wind": {
+  "units": 72,
+  "curves_exceeding_in_test_bands": {
+   "C": 72,
+   "P": 69,
+   "E1": 70,
+   "E3": 11
+  }
+ },
+ "solar": {
+  "units": 813,
+  "curves_exceeding_in_test_bands": {
+   "C": 781,
+   "P": 206,
+   "E1": 132
+  }
+ }
+}

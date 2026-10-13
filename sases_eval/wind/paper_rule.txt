@@ -1,0 +1,15 @@
+PAPER RULE (Eq. 5), POST HOC: beta = 2 x max leave-the-top-out ratio x delta
+
+scenario A: 1728 rows, 48 units
+  declared rate 2*kappa' median 0.737   beta / ||zeta|| median 0.92
+  premise held 0.453 of rows, on every row of 10/48 units
+  validity 0.631; where the premise held 1.000
+  premise held & bound failed: 0   premise failed & bound failed: 638
+  median S/e 0.983   silent 0.063
+
+scenario B: 819 rows, 25 units
+  declared rate 2*kappa' median 0.714   beta / ||zeta|| median 0.38
+  premise held 0.011 of rows, on every row of 0/25 units
+  validity 0.179; where the premise held 1.000
+  premise held & bound failed: 0   premise failed & bound failed: 672
+  median S/e 1.363   silent 0.087
