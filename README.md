@@ -156,7 +156,9 @@ repository runs from the checked-in `spec.npz` without that step.
 
 `Seven_Datasets_Certificate.pdf` is the current report: the certificate
 S(x) = [D − b − β]₊ with every equation, every law-allowance method (when it
-works, evidence, citations), and one section per dataset.
+works, evidence, citations), one section per dataset, and a comparison of all
+13 law-allowance rules on all seven datasets. `Certificate_Summary_Slides.pdf`
+is the 13-slide summary.
 
 | Study | Protocol | Code | Result |
 |---|---|---|---|
@@ -173,9 +175,11 @@ works, evidence, citations), and one section per dataset.
 | Shrink after the cap (K-S3), Kelmarsh 2021 | `KS3_PROTOCOL.md` | `ks3_audit.py` | `ks3/report.txt` |
 | Neural PDE surrogates (FNO, CNN, MLP) | `PDE_PROTOCOL.md`, `PDE_ADDENDUM.md` | `pde_surrogates.py` | `pde/report.txt` |
 | Machine-level bootstrap intervals | — | `bootstrap_ci.py` | `multi/bootstrap.json` |
+| All 13 law allowances × 7 datasets | — (exploratory) | `method_compare.py`, `compare_figures.py` | `compare/report.txt` |
 
 `sases_eval/reproduce.py` runs every step in order (`--report` rebuilds only
-summaries, figures and the PDF). Two environments: `.venv` (Python 3.8,
+summaries, figures and the PDFs; `report_visual.py --summary` builds the
+summary slides). Two environments: `.venv` (Python 3.8,
 `requirements-rerun.txt`) for the audits and `.venv-torch` (Python 3.11,
 PyTorch CPU, numpy, scipy, matplotlib) for `pde_surrogates.py`. The report
 scripts use the Times New Roman fonts in `C:/Windows/Fonts`.

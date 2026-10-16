@@ -20,6 +20,8 @@ COMPUTE = [
     (PY, 'multi_audit.py', 'run', 'capillary', 'kelmarsh', 'lahauteborne', 'penmanshiel', 'hilloftowie', 'pv9068', 'pv2107'),
     (PY, 'ranking_audit.py', 'run'),
     (PY, 'ks3_audit.py', 'run', '2017', '2018', '2019', '2020', '2021'),
+    (PY, 'method_compare.py', 'run', 'kelmarsh', 'penmanshiel', 'hilloftowie', 'lahauteborne', 'pv9068', 'pv2107',
+     'capillary'),
     (PYT, 'pde_surrogates.py', 'all'),
 ]
 REPORT = [
@@ -35,7 +37,11 @@ REPORT = [
     (PY, 'ks3_figures.py'),
     (PY, 'pde_figures.py'),
     (PY, 'eq_cards.py'),
+    (PY, 'method_compare.py', 'report'),
+    (PY, 'compare_figures.py'),
     (PY, 'report_simple.py'),
+    (PY, 'report_visual.py'),
+    (PY, 'report_visual.py', '--summary'),
 ]
 
 

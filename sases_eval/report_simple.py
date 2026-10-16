@@ -94,7 +94,7 @@ def r(name, band, rule='K-S1'):
 A(Spacer(1, 30))
 A(Paragraph('Catching Bad Surrogate Models<br/>Without the Answer', TITLE))
 A(Paragraph('The anchor-symmetry error certificate on seven datasets', SUB))
-A(Paragraph('Brandon Rodriguez · 10 October 2026', SUB)); A(Spacer(1, 18))
+A(Paragraph('Brandon Rodriguez · 16 October 2026', SUB)); A(Spacer(1, 18))
 box(['<b>Question:</b> a model is used beyond the data it was trained on. How wrong is it there?',
      '<b>Answer:</b> physics + the machine’s published limit say where the truth must be. '
      'If the model lands far outside that range, it is wrong by <b>at least</b> that distance.',
@@ -214,6 +214,8 @@ for k, (n, title, band, data, notes) in enumerate(DS, 3):
     fig(M / ('fig_%s_C.png' % n), 'Gold = the certificate S. Red = true error.')
     fig(M / ('fig_%s_R.png' % n), 'Ranking 9 → 100 models: certificate (gold) vs simple baseline (red).')
     fig(M / ('fig_%s_X.png' % n), 'Ablation: D − b − β adds up to the certificate (gold).')
+    fig(HERE / 'compare' / ('fig_%s.png' % n), 'All 13 law allowances on this dataset (section 11). Red = unsafe; '
+        'gold = best safe rule.', max_h=6.0)
     A(PageBreak())
 
 # ============================================================ K-S3
@@ -236,9 +238,39 @@ bullets(['<b>Allowance 14× → 1.6× the real law error.</b>', '<b>Error proven
 fig(HERE / 'ks3' / 'fig_ks3.png', 'Beyond rated power, 2017–2021. Gold = K-S3.')
 A(PageBreak())
 
+# ============================================================ every method on every dataset
+import compare_figures as CF
+CMP = CF.RES
+A(Paragraph('11. Every law allowance on every dataset', H1))
+P('Same units, same 9 surrogates, same three-term certificate. Only β changes. Fleet rules learn from '
+  '<b>other machines in other months</b>, never the scored machine.', BIG)
+box(['<b>Safe</b> = range right on ≥ 95% of unit-bins <b>and</b> bound valid on ≥ 99% of rows.',
+     '<b>Best</b> = highest error proven among safe rules.'])
+fig(HERE / 'compare' / 'fig_heatmap.png', 'Error proven beyond the published limit, every rule × dataset. '
+    'Boxed = best safe rule. × = unsafe (number = range right).', max_h=7.2)
+rows = []
+for n, t, b in CF.DS:
+    bb = CF.best(n, b)
+    v = CMP['%s|%s|%s' % (n, b, bb)]
+    s1 = CMP.get('%s|%s|K-S1' % (n, b), CMP.get('%s|%s|P' % (n, b)))
+    rows.append([t, '<b>%s</b>' % bb, pc(v['premise']), pc(v['valid']), '<b>%s</b>' % f2(v['Se']), f2(s1['Se'])])
+table(['Dataset', 'Best safe rule', 'Range right', 'Bound valid', 'Error proven', 'K-S1 before'], rows,
+      [1.6, 1.2, 1.0, 1.0, 1.1, 1.1], caption='Capillary has no published limit: last column is the paper rule P.')
+bullets(['<b>0 bound failures where the range was right</b>, all 13 rules, all 7 datasets.',
+         '<b>K-S3 (fleet, 95%) wins where it is safe:</b> Kelmarsh 0.80 → 0.94, Solar 2107 0.53 → 0.77.',
+         '<b>K-S3 sits on the 95% edge elsewhere:</b> 93–95% range right on Penmanshiel, Hill of Towie, La Haute Borne.',
+         '<b>K-S1 and Z are the guaranteed fallbacks:</b> 96–100% range right, prove less.',
+         '<b>Single-unit rules (C, P, E1, A) fail beyond the limit</b> on wind: often under 30% range right.',
+         '<b>Learned fleet scales (trees, neural net)</b> do not beat the plain fleet quantile.',
+         '<b>Solar 9068 stays loose with every rule</b> (best 0.23): the law itself is uncertain there.'],
+        st=ParagraphStyle('cb', parent=BUL, fontSize=13, leading=17.5))
+P('<i>Exploratory: the best rule was picked after seeing these results. Only K-S3 on Kelmarsh 2021 (section 10) was '
+  'fixed before its test data were opened. Code: method_compare.py.</i>', CAP)
+A(PageBreak())
+
 # ============================================================ PDE: real neural surrogates
 PDE = json.loads((HERE / 'pde' / 'results.json').read_text()) if (HERE / 'pde' / 'results.json').exists() else {}
-A(Paragraph('11. Real neural surrogates: PDE solvers', H1))
+A(Paragraph('12. Real neural surrogates: PDE solvers', H1))
 P('The slides’ question: check a learned surrogate of a solver <b>without running the solver</b>. Fourier Neural '
   'Operators [19] (the architecture PDEBench [18] benchmarks), residual CNNs and MLPs were trained on exact solutions of three '
   'equations (PDEBench-style initial conditions), then used at parameters <b>beyond their training range</b>. '
@@ -273,7 +305,7 @@ A(PageBreak())
 
 # ============================================================ uncertainty
 BS = json.loads((M / 'bootstrap.json').read_text())
-A(Paragraph('12. How sure are these numbers?', H1))
+A(Paragraph('13. How sure are these numbers?', H1))
 P('Rows from one turbine or inverter are not independent, so whole machines were resampled (2,000 bootstrap '
   'draws). The honest sample size is the number of machines.', BIG)
 rows = []
@@ -291,9 +323,9 @@ bullets(['With 4–6 machines all at 100%, the bootstrap shows no spread: a limi
 A(PageBreak())
 
 # ============================================================ summary + references
-A(Paragraph('13. Summary', H1))
+A(Paragraph('14. Summary', H1))
 bullets(['<b>The guarantee held:</b> 0 over-claims when the range was right, all 7 datasets.',
-         '<b>Best law allowance:</b> K-S3 with a published limit and machine history (2021: proves 93%); K-S1 with a limit only; E3 with a fleet; E1 for smooth laws.',
+         '<b>Best law allowance (13 rules × 7 datasets):</b> K-S3 with a published limit and machine history (proves 0.93–0.94); K-S1 or Z otherwise; single-unit rules fail beyond the limit.',
          '<b>Real neural surrogates (FNOs):</b> valid 99–100%; on diffusion proves 63% of the error when it speaks; '
          'a generic Lipschitz law proves nothing; silent where in-range errors have a heavy tail.',
          '<b>Anchor:</b> put it where the model was trained (b small). Elsewhere the bound goes to 0.',
